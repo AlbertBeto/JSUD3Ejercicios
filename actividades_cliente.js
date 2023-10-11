@@ -9,7 +9,7 @@
 // 3.2 Usando prompts y document.write() pide datos e imprime en pantalla 
 // 3.2.1 Pregunta si quiere ver perro o gato y muestra en pantalla la imagen de perro o gato. 
 
-//function preguntaPoG(){ //Intento crear una función y llamarla pero no acaba de funcionar. 
+//function preguntaPoG(){ //Intento crear una función y llamarla desde el html pero no acaba de funcionar. 
 
     let respuesta=prompt("Quieres ver un perro o un gato?");
     if(respuesta==="perro"){
@@ -73,6 +73,7 @@ switch(respuesta){
 }
 */
 
+/*
 // 3.3.1 Realiza un programa en javascript donde se le pregunte al usuario un número de filas y un número de columnas y genere una tabla (con los códigos HTML correspondientes) de las
 // filas y columnas indicadas por el usuario. En cada celda deberá mostrarse el texto “CELDA X,Y” siendo X e Y el número de fila y columna correspondiente.
 
@@ -89,6 +90,45 @@ for(let i = 1; i <= filas ; i++){
         document.write("<td style='border: 2px solid black; padding: 12px; text-align: center;'>");
             document.write("CELDA "+i+":"+j);
         document.write("</td>");
+    }
+    document.write("</tr>");
+}
+
+document.write("</table>");
+*/
+
+
+// 3.3.2 Copia el código anterior y realiza una modificación donde se le pida al usuario en que fila y columna se parará de crear la tabla. Cuando se llegue a dicha celda, se le preguntará al
+// usuario si quiere continuar pintando la tabla o si abandona la ejecución de la misma. Explica, a través de comentarios en el código, qué instrucciones has usado y por qué.
+
+let filas=0;
+let columnas=0;
+filas=parseInt(prompt("Vamos a montar una tabla. Cuantas filas quieres que tenga?"));
+columnas=parseInt(prompt("Cuantas columnas quieres que tenga?"));
+
+//Creo un nuevo juego de variables y promps para saber las coordenadas de la pausa
+let stopfilas=0;
+let stopcolumnas=0;
+stopfilas=parseInt(prompt("En que fila quieres que hagamos la pausa de confirmación?"));
+stopcolumnas=parseInt(prompt("Y en que columna?"));
+
+document.write("<table style='border-collapse: collapse; width: 75%;'>");
+for(let i = 1; i <= filas ; i++){
+    document.write("<tr>");
+
+    for(let j = 1; j <= columnas ; j++){
+        if(i===stopfilas && j===stopcolumnas){
+             let pausa=prompt("Quieres que continuemos? Si o No");
+            if(pausa!=="No"){
+                continue;
+            }
+            //Enganchado con el break. Mirar posibilidad de modificar los valores dei y de j
+            else{break;}
+        }
+        document.write("<td style='border: 2px solid black; padding: 12px; text-align: center;'>");
+            document.write("CELDA "+i+":"+j);
+        document.write("</td>");
+
     }
     document.write("</tr>");
 }
