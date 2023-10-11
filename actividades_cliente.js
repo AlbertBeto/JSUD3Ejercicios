@@ -123,7 +123,10 @@ for(let i = 1; i <= filas ; i++){
                 continue;
             }
             //Enganchado con el break. Mirar posibilidad de modificar los valores dei y de j
-            else{break;}
+            else{
+                i=filas;
+                j=columnas;
+                break;}
         }
         document.write("<td style='border: 2px solid black; padding: 12px; text-align: center;'>");
             document.write("CELDA "+i+":"+j);
