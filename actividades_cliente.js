@@ -41,6 +41,7 @@ if(respuesta===1){
 //¿Que solución le has dado? Convierto el valor del promps a int con un parse. 
 */
 
+/*
 // 3.2.3 Modifica el programa para que ahora pueda preguntar por varios animales 
 // ) y en función de la opción elegida, se muestren los mismos.
 
@@ -69,5 +70,27 @@ switch(respuesta){
         break;
     default:
         document.write("<p><strong>'Ha introducido mal su elección. Vuelva a intentarlo'</strong></p>");
-
 }
+*/
+
+// 3.3.1 Realiza un programa en javascript donde se le pregunte al usuario un número de filas y un número de columnas y genere una tabla (con los códigos HTML correspondientes) de las
+// filas y columnas indicadas por el usuario. En cada celda deberá mostrarse el texto “CELDA X,Y” siendo X e Y el número de fila y columna correspondiente.
+
+let filas=0;
+let columnas=0;
+filas=parseInt(prompt("Vamos a montar una tabla. Cuantas filas quieres que tenga?"));
+columnas=parseInt(prompt("Cuantas columnas quieres que tenga?"));
+
+document.write("<table style='border-collapse: collapse; width: 75%;'>");
+for(let i = 1; i <= filas ; i++){
+    document.write("<tr>");
+
+    for(let j = 1; j <= columnas ; j++){
+        document.write("<td style='border: 2px solid black; padding: 12px; text-align: center;'>");
+            document.write("CELDA "+i+":"+j);
+        document.write("</td>");
+    }
+    document.write("</tr>");
+}
+
+document.write("</table>");
