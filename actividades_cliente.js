@@ -1,8 +1,14 @@
+//Cada ejercicio está bien separado por bloques y todos están comentados. 
 //'use strict'
+
+
+/*
 // 3.1 Uso la función document.write directamente en el JS y simplemente llamo el script en el html
 //ya que al momento del ejercicio solo hay este codigo. 
 
-//document.write("<p>Tempestes venen del <strong>sud</strong>.</p>");
+document.write("<p>Tempestes venen del <strong>sud</strong>.</p>");
+*/
+
 
 
 /*
@@ -24,6 +30,9 @@
 //preguntaPoG();
 */
 
+
+
+
 /*
 //3.2.2 Modifica el programa para que el usuario deba pulsar 1 o 2 y se trate
 // como valor númerico. 
@@ -40,6 +49,8 @@ if(respuesta===1){
 //¿Que problema te has encontrado? Que la entrada de prompt la toma como string
 //¿Que solución le has dado? Convierto el valor del promps a int con un parse. 
 */
+
+
 
 /*
 // 3.2.3 Modifica el programa para que ahora pueda preguntar por varios animales 
@@ -73,6 +84,8 @@ switch(respuesta){
 }
 */
 
+
+
 /*
 // 3.3.1 Realiza un programa en javascript donde se le pregunte al usuario un número de filas y un número de columnas y genere una tabla (con los códigos HTML correspondientes) de las
 // filas y columnas indicadas por el usuario. En cada celda deberá mostrarse el texto “CELDA X,Y” siendo X e Y el número de fila y columna correspondiente.
@@ -98,6 +111,8 @@ document.write("</table>");
 */
 
 
+
+/*
 // 3.3.2 Copia el código anterior y realiza una modificación donde se le pida al usuario en que fila y columna se parará de crear la tabla. Cuando se llegue a dicha celda, se le preguntará al
 // usuario si quiere continuar pintando la tabla o si abandona la ejecución de la misma. Explica, a través de comentarios en el código, qué instrucciones has usado y por qué.
 
@@ -106,7 +121,7 @@ let columnas=0;
 filas=parseInt(prompt("Vamos a montar una tabla. Cuantas filas quieres que tenga?"));
 columnas=parseInt(prompt("Cuantas columnas quieres que tenga?"));
 
-//Creo un nuevo juego de variables y promps para saber las coordenadas de la pausa
+// 3.3.2 Creo un nuevo juego de variables y promps para saber las coordenadas de la pausa
 let stopfilas=0;
 let stopcolumnas=0;
 stopfilas=parseInt(prompt("En que fila quieres que hagamos la pausa de confirmación?"));
@@ -117,12 +132,16 @@ for(let i = 1; i <= filas ; i++){
     document.write("<tr>");
 
     for(let j = 1; j <= columnas ; j++){
+        // 3.3.2 Aquí creo un if que si los valores son los de pausa
+        //lanza una nueva ventana y pregunta si continuar si le dices
+        // que sea diferente a No continua y si no iguala el valor
+        // de las variables i y j a su maximo para que se salgan de los for
+        // y le hago un break para que salga del primer for. 
         if(i===stopfilas && j===stopcolumnas){
              let pausa=prompt("Quieres que continuemos? Si o No");
             if(pausa!=="No"){
                 continue;
             }
-            //Enganchado con el break. Mirar posibilidad de modificar los valores dei y de j
             else{
                 i=filas;
                 j=columnas;
@@ -137,3 +156,4 @@ for(let i = 1; i <= filas ; i++){
 }
 
 document.write("</table>");
+*/
